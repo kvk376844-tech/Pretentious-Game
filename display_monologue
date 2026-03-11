@@ -1,0 +1,4 @@
+haiku = self.poetry_gen.generate_haiku()
+haiku_surface = self.font.render(haiku, True, (255, 255, 255))
+haiku_rect = haiku_surface.get_rect(center=(400, 400))
+self.screen.blit(haiku_surface, haiku_rect)

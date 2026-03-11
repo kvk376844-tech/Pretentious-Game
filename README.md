@@ -20,6 +20,15 @@ Clone the repository and run the main script with Python (version 3.8 or later).
 For a code example, see `main.py`, which demonstrates the Philosopher Monologue Generator. This could be integrated into a Pygame scene for NPC interactions.
 
 ## Installation
+
+
+
+## Branching Strategy
+- `main`: Stable releases.
+- `develop`: Ongoing development.
+- Feature branches: Prefixed with `feature/` for new additions.
+Contributions: Create a feature branch, make changes, and submit a PR to `develop`.
+
 1. Clone the repo: `git clone https://github.com/yourusername/pretentious-game.git`
 2. Install dependencies: `pip install pygame`
 3. Run the main script: `python main.py` 

@@ -1,0 +1,45 @@
+import pygame
+import random
+
+class PretentiousMonologue:
+    def __init__(self):
+        self.profound_thoughts = [
+            "In the void of pixels, what is 'I' but a fleeting cursor?",
+            "Existence: a bug in the code of eternity.",
+            "To jump or not to jump—that is the platformer's dilemma.",
+            "Life's respawn is but an illusion of progress.",
+            "We are all NPCs in someone else's side quest."
+        ]
+        pygame.init()
+        self.font = pygame.font.SysFont('Arial', 24)
+        self.screen = pygame.display.set_mode((800, 600))
+        pygame.display.set_caption("Pretentious Game")
+
+    def generate_monologue(self):
+        random_index = random.randint(0, len(self.profound_thoughts) - 1)
+        return self.profound_thoughts[random_index]
+
+    def display_monologue(self, text):
+        self.screen.fill((0, 0, 0))  # Black background
+        text_surface = self.font.render(text, True, (255, 255, 255))  # White text
+        text_rect = text_surface.get_rect(center=(400, 300))
+        self.screen.blit(text_surface, text_rect)
+        pygame.display.flip()
+        print(f"Profound thought displayed: {text}")
+
+    def run(self):
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:  # Press space to generate new monologue
+                        monologue = self.generate_monologue()
+                        self.display_monologue(monologue)
+        pygame.quit()
+
+# Example usage
+if __name__ == "__main__":
+    game = PretentiousMonologue()
+    game.run()
